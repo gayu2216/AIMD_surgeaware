@@ -21,9 +21,23 @@ col1, col2, col3 = st.columns([1,4,1])
 with col1:
     st.image("logo_final.jpeg", width=150)  # Adjust width as needed
 
+zip_file_path = 'first_data.csv.zip'
+csv_file_name = 'first_data.csv'
+with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+    with zip_ref.open(csv_file_name) as my_file:
+       patient_data = pd.read_csv(my_file)
 
-patient_data = pd.read_csv("first_data.csv.zip")
-patient_postop_data = pd.read_csv("second_data.csv.zip")
+zip_file_path1 = 'second_data.csv.zip'
+csv_file_name1 = 'second_data.csv'
+with zipfile.ZipFile(zip_file_path1, 'r') as zip_ref:
+    with zip_ref.open(csv_file_name1) as my_file:
+      patient_postop_data = pd.read_csv(my_file)
+
+
+
+
+#patient_data = pd.read_csv("first_data.csv.zip")
+#patient_postop_data = pd.read_csv("second_data.csv.zip")
 patient_postop_data = patient_postop_data.reset_index(drop=True)
 
 icd9_codes = {

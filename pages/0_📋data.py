@@ -10,7 +10,7 @@ col1, col2, col3 = st.columns([1,4,1])
 
 
 with col1:
-    st.image("/Users/gayathriutla/Desktop/Projects/AIMD-surgeaware/logo_final.jpeg", width=150)  # Adjust width as needed
+    st.image("AIMD-surgeaware/logo_final.jpeg", width=150)  # Adjust width as needed
 
 with col2:
     st.write("")

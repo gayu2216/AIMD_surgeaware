@@ -1,4 +1,4 @@
 joblib
 pandas
 streamlit_lottie
-plotly.graph_objects
+plotly

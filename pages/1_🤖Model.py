@@ -4,7 +4,7 @@ import streamlit as st
 import pandas as pd
 import joblib
 from streamlit_lottie import st_lottie_spinner 
-
+import zipfile
 
 
 st.set_page_config(layout="wide")

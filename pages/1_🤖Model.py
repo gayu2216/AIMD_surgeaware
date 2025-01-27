@@ -13,13 +13,13 @@ def load_lottiefile(filepath:str):
     with open(filepath,"r") as f:
         return json.load(f)
 
-logo = load_lottiefile("/Users/gayathriutla/Desktop/Projects/AIMD-surgeaware/multipage/ann.json")
+logo = load_lottiefile("ann.json")
 
 col1, col2, col3 = st.columns([1,4,1])
 
 
 with col1:
-    st.image("/Users/gayathriutla/Desktop/Projects/AIMD-surgeaware/logo_final.jpeg", width=150)  # Adjust width as needed
+    st.image("logo_final.jpeg", width=150)  # Adjust width as needed
 
 
 patient_data = pd.read_csv("/Users/gayathriutla/Desktop/Projects/AIMD-surgeaware/first_data.csv")

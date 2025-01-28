@@ -7,9 +7,6 @@ from streamlit_lottie import st_lottie_spinner
 import zipfile
 import io
 
-with zipfile.ZipFile('your_zip_file.zip', 'r') as zip_ref:
-    with zip_ref.open('your_csv_file.csv') as file:
-        df = pd.read_csv(io.TextIOWrapper(file))
 
 
 st.set_page_config(layout="wide")

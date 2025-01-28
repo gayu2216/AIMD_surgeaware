@@ -4,7 +4,12 @@ import streamlit as st
 import pandas as pd
 import joblib
 from streamlit_lottie import st_lottie_spinner 
+import zipfile
+import io
 
+with zipfile.ZipFile('your_zip_file.zip', 'r') as zip_ref:
+    with zip_ref.open('your_csv_file.csv') as file:
+        df = pd.read_csv(io.TextIOWrapper(file))
 
 
 st.set_page_config(layout="wide")
@@ -19,12 +24,21 @@ col1, col2, col3 = st.columns([1,4,1])
 
 
 with col1:
-    st.image("logo_final.jpeg", width=150)  # Adjust width as needed
+    st.image("logo_final.jpeg", width=150) 
+
+with zipfile.ZipFile('first_data.csv.zip', 'r') as zip_ref:
+    with zip_ref.open('first_data.csv') as file:
+        patient_data = pd.read_csv(io.TextIOWrapper(file))
+
+with zipfile.ZipFile('second_data.csv.zip', 'r') as zip_ref:
+    with zip_ref.open('second_data.csv') as file:
+        patient_postop_data  = pd.read_csv(io.TextIOWrapper(file))
 
 
-patient_data = pd.read_csv("first_data.csv.zip",compression='zip', filename='first_data.csv')
-patient_postop_data = pd.read_csv("second_data.csv.zip",compression='zip', filename='second_data.csv')
-patient_postop_data = patient_postop_data.reset_index(drop=True)
+
+#patient_data = pd.read_csv("first_data.csv.zip",compression='zip', filename='first_data.csv')
+#patient_postop_data = pd.read_csv("second_data.csv.zip",compression='zip', filename='second_data.csv')
+#patient_postop_data = patient_postop_data.reset_index(drop=True)
 
 icd9_codes = {
     "Gastroesophageal reflux disease": "530.81",

@@ -22,8 +22,8 @@ with col1:
     st.image("logo_final.jpeg", width=150)  # Adjust width as needed
 
 
-patient_data = pd.read_csv("first_data.csv.zip",compression='zip', filename='first_data.csv'))
-patient_postop_data = pd.read_csv("second_data.csv.zip",compression='zip', filename='second_data.csv'))
+patient_data = pd.read_csv("first_data.csv.zip",compression='zip', filename='first_data.csv')
+patient_postop_data = pd.read_csv("second_data.csv.zip",compression='zip', filename='second_data.csv')
 patient_postop_data = patient_postop_data.reset_index(drop=True)
 
 icd9_codes = {

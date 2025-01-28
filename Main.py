@@ -3,15 +3,15 @@ import streamlit as st
 
 
 data = st.Page(
-    "pages/0_📋data.py",
+    "app_pages/0_📋data.py",
     title = "Data",
 )
 Model = st.Page(
-    "pages/1_🤖Model.py",
+    "app_pages/1_🤖Model.py",
     title="Model",  
 )
 Prediction = st.Page(
-    "pages/2_🔮Prediction.py",
+    "app_pages/2_🔮Prediction.py",
     title="Prediction",
 )
 
